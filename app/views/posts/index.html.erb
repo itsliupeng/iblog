@@ -1,0 +1,47 @@
+<h1>Listing posts</h1>
+
+<% @posts.each do |post| %>
+  <h2><%= post.title %></h2>
+    <p>
+      <%= post.author %>
+      created at 
+      <%= time_ago_in_words post.created_at %> ago.
+    <p>
+  <div class="content">
+    <%= post.content %>
+  </div>
+<% end %>
+<hr />
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Content</th>
+      <th>View</th>
+      <th>Like</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.title %></td>
+        <td><%= post.author %></td>
+        <td><%= post.content %></td>
+        <td><%= post.view %></td>
+        <td><%= post.like %></td>
+        <td><%= link_to 'Show', post %></td>
+        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Post', new_post_path %>

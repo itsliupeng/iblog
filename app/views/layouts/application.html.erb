@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Iblog</title>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="navbar navbar-fixed">
+      <div class="navbar-inner">
+        <div class="container">
+          <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Title</a>
+          <!-- Everything you want hidden at 940px or less, place within here -->
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#">Archive</a></li>
+              <li><a href="#">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container" id="container">
+      <div class="row" id="main">
+        <div class="span9">
+          <%= yield %>
+        </div>
+        <div class="span3" id="sidebar">
+          <h2>About Me</h2>
+          <div class="">
+            <p>
+              缘于初中，在高中时代，也比较喜欢生物，所以大学选专业时自己定了生物方向，但又
+              放不下对于物理的兴趣，折中一下，最后选择了西安交通大学的生物医学工程专业（俗称医电--医用电子的简称）。
+
+              进入大学一切都不像我想象的，自己也不知道以后要做什么，自己genunie interest在哪,糊涂地选修了医电所
+              有能选的课，混到了毕业。医电专业有些实验课是关于嵌入式设备，当时觉得嵌入式设备会是未来的方
+              向，自己要去学嵌入式，就奔着“嵌入式”三字又在信息相当不对称的情况下上了研究生。
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+</body>
+</html>
