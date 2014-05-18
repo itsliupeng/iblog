@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_filter :authorize, only: [:edit, :update, :destroy]
 
   # GET /posts
   # GET /posts.json
@@ -28,6 +29,9 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
+    @post.author = current_user.name
+    @post.view = 0
+    @post.like = 0
 
     respond_to do |format|
       if @post.save
@@ -70,8 +74,18 @@ class PostsController < ApplicationController
       @post = Post.find(params[:id])
     end
 
+    def authorize
+      if current_user.nil?
+        flash[:error] = "not authorize"
+        redirect_to login_url 
+      elsif current_user && (current_user.name != @post.author)
+        redirect_to root_url, alert: "not your post"
+      end
+    end
+
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :author, :content, :view, :like)
+      params.require(:post).permit(:title, :content)
     end
 end
