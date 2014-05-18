@@ -10,6 +10,9 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @post.view ||= 0;
+    @post.view += 1;
+    @post.save
   end
 
   # GET /posts/new

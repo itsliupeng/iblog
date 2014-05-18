@@ -9,7 +9,10 @@
     <%= post.author %>
     created at 
     <%= time_ago_in_words post.created_at %> ago.
+    <span class="badge badge-info"> <%= pluralize post.view, "time" %> </span>
+
     <p>
+    
     <div class="excerpt">
       <%= truncate_html markdown(post.content) %>
 
