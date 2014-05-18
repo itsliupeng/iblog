@@ -12,24 +12,17 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "input-xxlarge" %>
   </div>
   <div class="field">
-    <%= f.label :author %><br>
-    <%= f.text_field :author %>
+    <%= f.label :author %>
+    <%= f.text_field :author, class: "input-xxlarge" %>
   </div>
   <div class="field">
-    <%= f.label :content %><br>
-    <%= f.text_area :content %>
-  </div>
-  <div class="field">
-    <%= f.label :view %><br>
-    <%= f.text_field :view %>
-  </div>
-  <div class="field">
-    <%= f.label :like %><br>
-    <%= f.text_field :like %>
+    <%= f.label :content %>
+    <p>支持markdown语法</p>
+    <%= f.text_area :content, rows: 10 , class: "input-block-level", placeholder: "markdown" %>
   </div>
   <div class="actions">
     <%= f.submit %>

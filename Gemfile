@@ -62,8 +62,12 @@ group :test do
 end
 
 ## use markdown 
+gem 'pygments.rb'
 gem 'redcarpet'
-gem 'albino'
-gem 'nokogiri'
 
+## use will_paginate
+gem 'will_paginate', '~> 3.0.4'
 
+gem 'truncate_html' 
+
+gem 'simple_form'

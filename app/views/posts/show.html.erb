@@ -1,29 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
+<h1 class="title">
   <%= @post.title %>
+</h1>
+
+<p>
+<%= @post.author %> created at <%= time_ago_in_words @post.created_at %> ago
 </p>
 
 <p>
-  <strong>Author:</strong>
-  <%= @post.author %>
+  <%= markdown(@post.content)  %>
 </p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @post.content %>
-</p>
-
-<p>
-  <strong>View:</strong>
-  <%= @post.view %>
-</p>
-
-<p>
-  <strong>Like:</strong>
-  <%= @post.like %>
-</p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %> |
 <%= link_to 'Back', posts_path %>
