@@ -20,11 +20,13 @@
           <!-- Everything you want hidden at 940px or less, place within here -->
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="active"><a href="/">Home</a></li>
+              <li class="<%= "active" if controller_name == "posts" %>" > <a href="/">Home</a></li>
                <li class="divider-vertical"></li>
-              <li><a href="/archive">Archive</a></li>
+               <li class="<%= "active" if controller_name == "archive" %>" ><a href="/archive">Archive</a></li>
                <li class="divider-vertical"></li>
-              <li><a href="https://gist.github.com/dp90219/1dc81a815887b3b2cd3b#file-liupeng-s-cv-md">About</a></li>
+               <li class="<%= "active" if controller_name == "about" %>" >
+                   <a href="https://gist.github.com/dp90219/1dc81a815887b3b2cd3b#file-liupeng-s-cv-md">About</a>
+               </li>
             </ul>
 
             <div class="pull-right user_header">
@@ -61,7 +63,7 @@
           <h2>About Me</h2>
           <div class="">
             <p>
-            This is a simple blog demo based on Ruby-on-Rails and Twitter-Bootstrap.It is achieved that any person who has signed up and logged in can write new post int this platform, but can only edit and delete the posts under his or her account. You do not have right to edit or delete others' posts. Enjoy yourself to surfing this blog. Thanks for reading.
+            This is a simple blog demo based on Ruby-on-Rails and Twitter-Bootstrap.It implements that any person who has signed up and logged in can write new post int this platform, but can only edit and delete the posts under his or her account. You do not have right to edit or delete others' posts. Enjoy yourself to surfing this blog. Thanks for reading.
              </p>
           </div>
         </div>
