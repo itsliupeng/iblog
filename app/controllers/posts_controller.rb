@@ -29,7 +29,7 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
-    @post.author = current_user.name
+    @post.author ||= current_user.name
     @post.view = 0
     @post.like = 0
 

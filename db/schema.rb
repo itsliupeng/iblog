@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(version: 20140518074626) do
     t.string   "title"
     t.string   "author"
     t.text     "content"
-    t.decimal  "view",       precision: 10, scale: 0
-    t.decimal  "like",       precision: 10, scale: 0
+    t.decimal  "view",       precision: 10, scale: 0, default: 0
+    t.decimal  "like",       precision: 10, scale: 0, default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
