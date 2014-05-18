@@ -1,4 +1,5 @@
 Iblog::Application.routes.draw do
+  get "archive" => "archive#index", :as => "archive"
   resources :users
   resources :sessions
   get "logout" => "sessions#destroy", :as => "logout"

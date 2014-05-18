@@ -1,0 +1,10 @@
+
+<h1>Blog Archive</h1>
+
+<ol>
+<% @posts.each do |post| %>
+  <li><small class="time"><%= post.created_at.strftime("%B %d at %I:%M %p") %></small>
+  <%= link_to post.title, post %></li>
+
+<% end %>
+</ol>

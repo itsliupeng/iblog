@@ -1,0 +1,18 @@
+// Place all the styles related to the Archive controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+ol{
+  margin-top: 2em;
+  li {
+    margin-left: 2em;
+    margin-bottom: 1em;
+    a {
+      margin-left: 1em;
+    }
+    .time {
+      float: right;
+      margin-right: 2em;
+    }
+  }
+}
